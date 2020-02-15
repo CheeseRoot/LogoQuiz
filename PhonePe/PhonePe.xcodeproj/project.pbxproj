@@ -70,22 +70,78 @@
 		27150A5223F7C30400349396 /* PhonePe */ = {
 			isa = PBXGroup;
 			children = (
-				27150A6D23F7C58500349396 /* logo.txt */,
+				27150A5323F7C30400349396 /* AppDelegate.swift */,
+				27150A7523F7E54300349396 /* Quiz */,
 				27150A5A23F7C30500349396 /* Assets.xcassets */,
 				27150A5C23F7C30500349396 /* LaunchScreen.storyboard */,
 				27150A5F23F7C30500349396 /* Info.plist */,
-				27150A5323F7C30400349396 /* AppDelegate.swift */,
-				27150A5723F7C30400349396 /* Main.storyboard */,
+			);
+			path = PhonePe;
+			sourceTree = "<group>";
+		};
+		27150A7523F7E54300349396 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				27150A7B23F7E5D200349396 /* Resources */,
+				27150A7A23F7E5AB00349396 /* Manager */,
+				27150A7923F7E59700349396 /* UI */,
+				27150A7823F7E58500349396 /* Model */,
+				27150A7723F7E57A00349396 /* ViewModel */,
+				27150A7623F7E57100349396 /* Controller */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		27150A7623F7E57100349396 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				27150A5523F7C30400349396 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27150A7723F7E57A00349396 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
 				27150A6F23F7C90500349396 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		27150A7823F7E58500349396 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27150A6923F7C50400349396 /* Logo.swift */,
 				27150A6523F7C40700349396 /* UserProfile.swift */,
 				27150A6723F7C4F800349396 /* LogoDataStore.swift */,
-				27150A6923F7C50400349396 /* Logo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27150A7923F7E59700349396 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				27150A5723F7C30400349396 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		27150A7A23F7E5AB00349396 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
 				27150A6B23F7C55500349396 /* LogoDownloadManager.swift */,
 				27150A7123F7D17100349396 /* ImageDownloadManager.swift */,
 				27150A7323F7D88600349396 /* LetterGenerator.swift */,
 			);
-			path = PhonePe;
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		27150A7B23F7E5D200349396 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27150A6D23F7C58500349396 /* logo.txt */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
