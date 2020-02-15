@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     private var timer: Timer?
     private var count: Double = 30
 
-
+    private var isPaused: Bool = false
     
     override func viewDidLoad() {
         
@@ -132,14 +132,21 @@ extension ViewController { // @IBAction
     
     @IBAction func inputButtonTapped(_ sender: UIButton) {
 
-        if let inputKey = sender.titleLabel?.text, let currentText = self.inputTextField.text {
+        if self.isPaused == false {
             
-            let newString = currentText + inputKey
+            if let inputKey = sender.titleLabel?.text, let currentText = self.inputTextField.text {
+                
+                let newString = currentText + inputKey
+                
+                self.inputTextField.text = newString
+                
+                self.validate(input: newString)
+                
+            }
+        }
+        else {
             
-            self.inputTextField.text = newString
-            
-            self.validate(input: newString)
-
+            // Handle pause state
         }
     }
     
@@ -147,6 +154,22 @@ extension ViewController { // @IBAction
     @IBAction func backButtonTapped(_ sender: UIButton) {
         
         
+    }
+    
+    
+    @IBAction func pauseButtonTapped(_ sender: UIButton) {
+        
+        self.isPaused = true
+        
+        self.invalidateTimer()
+    }
+    
+    
+    @IBAction func resumeButtonTapped(_ sender: UIButton) {
+        
+        self.isPaused = false
+        
+        self.startTimer()
     }
 }
 
