@@ -16,24 +16,38 @@ class ViewController: UIViewController {
     @IBOutlet private var currentScoreLabel: UILabel!
     @IBOutlet private var currentLevelLabel: UILabel!
     @IBOutlet private var countDownLabel: UILabel!
-    
+    @IBOutlet private var resumeButton: UIButton!
 
     private let viewModel: ViewModel = ViewModel(downloadManager: LogoDownloadManager())
     
     private var timer: Timer?
     private var count: Double = 30
 
-    private var isPaused: Bool = false
+    private var isPaused: Bool = false {
+        
+        didSet {
+            
+            self.setupUI()
+        }
+    }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        self.isPaused = false
         
         self.setupVM()
         
         self.startTimer()
         
         self.viewModel.fetchLogoAndSaveToDataStore()
+    }
+    
+    
+    private func setupUI() {
+        
+        resumeButton.isHidden = !isPaused
     }
 
     

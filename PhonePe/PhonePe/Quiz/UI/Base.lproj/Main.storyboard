@@ -322,6 +322,7 @@
                         <outlet property="currentScoreLabel" destination="hAc-RA-snw" id="6cJ-ri-Qbe"/>
                         <outlet property="inputTextField" destination="wRI-Bq-TXW" id="HnB-9s-su5"/>
                         <outlet property="logoImageView" destination="4bq-S6-Hen" id="Iwi-OO-bK4"/>
+                        <outlet property="resumeButton" destination="8ZG-8A-cYv" id="avs-ga-g2D"/>
                         <outletCollection property="keyLetters" destination="20j-qE-09E" collectionClass="NSMutableArray" id="7fp-ig-pgA"/>
                         <outletCollection property="keyLetters" destination="92i-oa-OiT" collectionClass="NSMutableArray" id="gOh-ST-HKE"/>
                         <outletCollection property="keyLetters" destination="gR6-qR-hkd" collectionClass="NSMutableArray" id="R3U-df-7An"/>
