@@ -265,12 +265,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o9-bk-TIp">
+                                <rect key="frame" x="319.5" y="40" width="35.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6o9-bk-TIp" secondAttribute="trailing" constant="20" id="4wv-if-m9f"/>
                             <constraint firstItem="hAc-RA-snw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6eI-YA-Dno"/>
                             <constraint firstItem="hAc-RA-snw" firstAttribute="top" secondItem="BER-re-vl1" secondAttribute="bottom" constant="30" id="7tJ-lp-WPr"/>
                             <constraint firstItem="SL8-RX-W1O" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9ui-h8-lwO"/>
+                            <constraint firstItem="6o9-bk-TIp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="CTj-yE-G7n"/>
                             <constraint firstItem="3Kh-2w-iIS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NRg-LU-YLF"/>
                             <constraint firstItem="3Kh-2w-iIS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nl8-re-7xI"/>
                             <constraint firstItem="wRI-Bq-TXW" firstAttribute="top" secondItem="SL8-RX-W1O" secondAttribute="bottom" constant="44" id="m3H-hC-VGB"/>
@@ -283,6 +291,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="countDownLabel" destination="6o9-bk-TIp" id="OOK-S5-4eg"/>
                         <outlet property="currentLevelLabel" destination="BER-re-vl1" id="pcC-Rd-bmR"/>
                         <outlet property="currentScoreLabel" destination="hAc-RA-snw" id="6cJ-ri-Qbe"/>
                         <outlet property="inputTextField" destination="wRI-Bq-TXW" id="HnB-9s-su5"/>

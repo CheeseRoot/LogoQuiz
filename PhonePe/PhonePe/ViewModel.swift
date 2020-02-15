@@ -59,7 +59,7 @@ class ViewModel {
     
     ///
     
-    func moveUserToNextLevelAndRefreshUI() {
+    func moveUserToNextLevelAndRefreshUI(forCount count: Double) {
         
         let currentLevelStage = self.userManager.getUserLevel()
         
@@ -67,7 +67,7 @@ class ViewModel {
         
         self.userManager.setUserLevel(value: currentLevelStage + 1)
         
-        self.userManager.setUserScore(value: currentLevelScore + 10.0)
+        self.userManager.setUserScore(value: currentLevelScore + count)
         
         self.refreshUI?()
     }

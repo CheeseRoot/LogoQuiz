@@ -15,15 +15,23 @@ class ViewController: UIViewController {
     @IBOutlet private var inputTextField: UITextField!
     @IBOutlet private var currentScoreLabel: UILabel!
     @IBOutlet private var currentLevelLabel: UILabel!
+    @IBOutlet private var countDownLabel: UILabel!
+    
 
     private let viewModel: ViewModel = ViewModel(downloadManager: LogoDownloadManager())
     
+    private var timer: Timer?
+    private var count: Double = 30
+
+
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         self.setupVM()
+        
+        self.startTimer()
         
         self.viewModel.fetchLogoAndSaveToDataStore()
     }
@@ -95,14 +103,26 @@ class ViewController: UIViewController {
         
         if viewModel.validateInputForCurrentLevel(input: input) {
             
-            self.inputTextField.text = ""
+            viewModel.moveUserToNextLevelAndRefreshUI(forCount: self.count)
             
-            viewModel.moveUserToNextLevelAndRefreshUI()
+            self.resetForNewLevel()
         }
         else {
             
             // Handle Error
         }
+    }
+    
+    
+    private func resetForNewLevel() {
+        
+        self.inputTextField.text = ""
+        
+        self.count = 30
+        
+        self.invalidateTimer()
+        
+        self.startTimer()
     }
 }
 
@@ -138,6 +158,38 @@ extension ViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
         return false
+    }
+}
+
+
+
+extension ViewController { // Timer
+    
+    func startTimer() {
+        
+         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
+    }
+    
+    
+    func invalidateTimer() {
+        
+        self.timer?.invalidate()
+        
+        self.timer = nil
+    }
+    
+    
+    @objc func update() {
+        
+        if(count > 0) {
+            
+            count = count - 1
+            
+            countDownLabel.text = "\(String(count)) seconds"
+        }
+        else {
+            //Handle countdown finish error
+        }
     }
 }
 
